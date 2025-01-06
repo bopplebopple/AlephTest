@@ -1,0 +1,11 @@
+# Ignore Go test files
+*.test
+
+# Ignore environment files
+.env
+
+# Ignore the output binary
+main
+
+# Ignore version control directories
+.git
