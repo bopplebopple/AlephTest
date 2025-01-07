@@ -50,5 +50,5 @@ func main() {
 
 	routes.SetupRoutes(r, weatherHandler)
 
-	r.Run(":8080")
+	r.Run(":3000")
 }
