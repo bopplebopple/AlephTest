@@ -32,12 +32,17 @@ func main() {
 
 	c := cache.New(cacheExpiryDuration, cacheExpiryDuration)
 
-	apiKey := os.Getenv("WEATHER_API_KEY")
-	if apiKey == "" {
+	apiKey1 := os.Getenv("WEATHER_API_KEY")
+	if apiKey1 == "" {
 		log.Fatal("WEATHER_API_KEY environment variable is required")
 	}
 
-	weatherService := services.NewWeatherService(c, apiKey)
+	apiKey2 := os.Getenv("WEATHER_BIT_API_KEY")
+	if apiKey2 == "" {
+		log.Fatal("WEATHER_BIT_API_KEY environment variable is required")
+	}
+
+	weatherService := services.NewWeatherService(c, apiKey1, apiKey2)
 
 	weatherHandler := handlers.NewWeatherHandler(weatherService)
 

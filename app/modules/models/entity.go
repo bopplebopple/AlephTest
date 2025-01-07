@@ -27,3 +27,8 @@ type Stats struct {
 	APICalls  int `json:"api_calls"`
 	CacheHits int `json:"cache_hits"`
 }
+
+type Coordinates struct {
+	Latitude  float64
+	Longitude float64
+}
