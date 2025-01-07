@@ -10,8 +10,11 @@ COPY go.mod go.sum ./
 # Download the Go modules dependencies
 RUN go mod download
 
-# Copy the entire application
-COPY . .
+# Copy the entire application (including .env file)
+COPY . . 
+
+# Copy .env file explicitly (optional if you want to specify location)
+COPY .env .env
 
 # Build the Go application
 RUN go build -o main .
