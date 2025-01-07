@@ -23,14 +23,23 @@ To run this project, ensure you have [Docker](https://www.docker.com/) installed
 1. **Install Docker**  
    Follow the installation instructions on the [official Docker website](https://www.docker.com/).
 
-2. **Build the Docker Image**  
+2. **Create a `.env` file**  
+   Create a `.env` file in the root of the project directory and include the following environment variables:
+   ```dotenv
+   WEATHER_BIT_API_KEY=your-weather-bit-api-key
+   WEATHER_API_KEY=your-weather-api-key
+   RATE_LIMIT_PER_SECOND=1
+   RATE_LIMIT_BURST_SIZE=20
+   CACHE_EXPIRY_TIME=30
+
+3. **Build the Docker Image**  
    Open your terminal and run the following command to build the Docker image:
 
    ```bash
    docker build -t bopple/aleph_test .
    ```
    
-3. **Run the Docker Container**  
+4. **Run the Docker Container**  
    After building the image, you can run the Docker container with:
 
    ```
